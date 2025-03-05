@@ -54,7 +54,7 @@ Chi tiết hướng dẫn cài đặt và chạy dự án có trong file [HUONG_
 ### Clone dự án
 
 ```sh
-git clone https://github.com/phungquynh1899/blog-api-v1
+git clone https://github.com/phungquynh1899/blog-api
 ```
 
 ### Truy cập thư mục dự án
