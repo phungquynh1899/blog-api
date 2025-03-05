@@ -1,0 +1,92 @@
+HƯỚNG DẪN KHỞI CHẠY DỰ ÁN BLOG
+
+I. YÊU CẦU HỆ THỐNG
+1. Node.js version 18 trở lên
+   - Kiểm tra version: node --version
+   - Tải Node.js: https://nodejs.org/
+
+2. MongoDB
+   - Đã có sẵn MongoDB Atlas Cloud (không cần cài đặt local)
+
+3. Các công cụ cần thiết:
+   - Git (để clone dự án)
+   - Code editor (VS Code khuyến nghị)
+   - Terminal/Command Prompt
+
+II. KHỞI CHẠY BACKEND
+1. Clone dự án và cài đặt dependencies:
+   ```bash
+   git clone [URL_DỰ_ÁN]
+   cd blog-api
+   npm install
+   ```
+
+2. Cấu hình môi trường:
+   - Tạo file .env trong thư mục gốc
+   - Copy nội dung sau vào file .env:
+     ```
+     MONGODB_URL=mongodb+srv://phungquynh1899:123456789phungquynh@blog-api-nodejs.ikaa2.mongodb.net/blog-api?retryWrites=true&w=majority&appName=blog-api-nodejs
+     CLOUDINARY_CLOUD_NAME=dciifjajg
+     CLOUDINARY_API_KEY=438156819662958
+     CLOUDINARY_SECRET_KEY=AIlbLlGeEjBoNFlzW_XxcGlC02U
+     ```
+
+3. Khởi chạy server:
+   ```bash
+   npm run server.js
+   ```
+   - Server sẽ chạy tại: http://localhost:8888
+   - Nếu thấy thông báo "Blog đang chạy tại cổng 8888" là thành công
+
+III. KHỞI CHẠY FRONTEND
+1. Mở terminal mới, di chuyển vào thư mục frontend:
+   ```bash
+   cd blog-frontend
+   npm install
+   ```
+
+2. Khởi chạy frontend:
+   ```bash
+   npm run dev
+   ```
+   - Frontend sẽ chạy tại: http://localhost:3000
+   - Nếu trình duyệt không tự mở, hãy mở thủ công URL trên
+
+IV. TRẢI NGHIỆM ỨNG DỤNG
+1. Mở trình duyệt web (Chrome/Firefox/Edge)
+2. Truy cập: http://localhost:3000
+3. Các tính năng có sẵn:
+   - Đăng ký tài khoản mới
+   - Đăng nhập
+   - Xem danh sách bài viết
+   - Tạo bài viết mới
+   - Comment và tương tác
+
+V. XỬ LÝ LỖI THƯỜNG GẶP
+1. Lỗi "Port already in use":
+   - Kiểm tra và tắt các ứng dụng đang chạy trên port 8888 hoặc 3000
+   - Hoặc thay đổi port trong file .env (backend) và vite.config.js (frontend)
+
+2. Lỗi kết nối MongoDB:
+   - Kiểm tra kết nối internet
+   - Kiểm tra URL MongoDB trong file .env
+   - Đảm bảo IP của bạn được whitelist trong MongoDB Atlas
+
+3. Lỗi "Module not found":
+   - Chạy lại npm install trong cả backend và frontend
+   - Kiểm tra Node.js version
+
+4. Lỗi CORS:
+   - Đảm bảo backend đang chạy trước khi start frontend
+   - Kiểm tra URL API trong frontend có đúng không
+
+VI. LIÊN HỆ HỖ TRỢ
+Nếu gặp bất kỳ vấn đề nào, vui lòng liên hệ:
+- Email: [email của bạn]
+- GitHub Issues: [link GitHub repository]
+
+LƯU Ý QUAN TRỌNG:
+- Đảm bảo chạy backend trước, frontend sau
+- Không tắt terminal khi đang chạy dự án
+- Kiểm tra kết nối internet vì dự án sử dụng MongoDB Atlas và Cloudinary
+- Nếu muốn dừng server, nhấn Ctrl+C trong terminal tương ứng 
